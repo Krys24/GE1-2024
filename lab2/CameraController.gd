@@ -4,7 +4,7 @@ extends Camera3D
 @export var look_sens: float = 0.3  # mouse sensitivity
 
 var velocity: Vector3 = Vector3.ZERO  # to store movement direction
-var rotation_enabled: bool = true  # Allows enabling/disabling mouse rotation
+var rotation_enabled: bool = true  # allows enabling/disabling mouse rotation
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)  # hides & captures the cursor
