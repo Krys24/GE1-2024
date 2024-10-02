@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://dtyqdqms7p3jf"]
+
+[ext_resource type="Script" path="res://tower_spawner.gd" id="1_k5he5"]
+[ext_resource type="PackedScene" uid="uid://bl31b2opjge3f" path="res://Brick.tscn" id="2_d8y4i"]
+[ext_resource type="Script" path="res://CameraController.gd" id="3_hk0g1"]
+
+[node name="TowerSpawner" type="Node3D"]
+script = ExtResource("1_k5he5")
+brick_scene = ExtResource("2_d8y4i")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.409391, -0.130151, 0.304672)
+script = ExtResource("3_hk0g1")
