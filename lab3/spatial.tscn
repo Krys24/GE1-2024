@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://n25vckx0oyu8"]
+
+[ext_resource type="Script" path="res://character_body_3d.gd" id="1_blfh8"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ghcx7"]
+size = Vector2(25, 25)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wp4g1"]
+albedo_color = Color(0.411765, 1, 0.101961, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_4y8os"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7jyxh"]
+
+[node name="Spatial" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_ghcx7")
+surface_material_override/0 = SubResource("StandardMaterial3D_wp4g1")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+script = ExtResource("1_blfh8")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("BoxMesh_4y8os")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_7jyxh")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
