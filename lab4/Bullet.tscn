@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bdajrj3mpr2li"]
+
+[ext_resource type="Script" path="res://rigid_body_3d.gd" id="1_7lyyq"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_dqohg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8oi2"]
+albedo_color = Color(0.880808, 0.907, 0.982867, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vymur"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+script = ExtResource("1_7lyyq")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_dqohg")
+surface_material_override/0 = SubResource("StandardMaterial3D_e8oi2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_vymur")
