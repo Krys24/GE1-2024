@@ -1,0 +1,212 @@
+[gd_scene format=3 uid="uid://4b7uhlsfmlo7"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 8
+
+[node name="CheckButton1" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton2" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton3" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton4" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton5" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton6" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton7" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton8" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton9" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton10" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton11" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton12" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton13" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton14" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton15" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton16" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton17" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton18" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton19" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton20" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton21" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton22" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton23" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton24" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton25" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton26" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton27" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton28" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton29" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton30" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton31" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton32" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton33" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton34" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton35" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton36" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton37" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton38" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton39" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton40" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton41" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton42" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton43" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton44" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton45" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton46" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton47" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton48" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton49" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton50" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton51" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton52" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton53" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton54" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton55" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton56" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton57" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton58" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton59" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton60" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton61" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton62" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton63" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
+
+[node name="CheckButton64" type="CheckButton" parent="Control/GridContainer"]
+layout_mode = 2
