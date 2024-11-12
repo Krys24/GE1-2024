@@ -214,6 +214,10 @@ layout_mode = 2
 [node name="CheckButton64" type="CheckButton" parent="Control/GridContainer"]
 layout_mode = 2
 
+[node name="Timer" type="Timer" parent="Control/GridContainer"]
+wait_time = 0.5
+autostart = true
+
 [connection signal="pressed" from="Control/GridContainer/CheckButton1" to="Control/GridContainer" method="_on_check_button_1_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton2" to="Control/GridContainer" method="_on_check_button_2_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton3" to="Control/GridContainer" method="_on_check_button_3_pressed"]
@@ -278,3 +282,4 @@ layout_mode = 2
 [connection signal="pressed" from="Control/GridContainer/CheckButton62" to="Control/GridContainer" method="_on_check_button_62_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton63" to="Control/GridContainer" method="_on_check_button_63_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton64" to="Control/GridContainer" method="_on_check_button_64_pressed"]
+[connection signal="timeout" from="Control/GridContainer/Timer" to="Control/GridContainer" method="_on_timer_timeout"]

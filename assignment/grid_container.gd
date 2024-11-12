@@ -1,19 +1,28 @@
 extends GridContainer
 
-# function connects to "pressed" signal of each button
+var button_states = Array()  # stores true/false for each button's state
+var current_column = 0
+
+func _ready():
+	# initialize an 8x8 grid of false (inactive) buttons
+	for i in range(8):
+		button_states.append([false, false, false, false, false, false, false, false])
+
+
 func _on_Button_pressed(button):
-	# get position of button in grid
 	var row = int(button.get_position().y / button.rect_min_size.y)
 	var column = int(button.get_position().x / button.rect_min_size.x)
-
-	# toggle tate of button (active/inactive)
-	button.pressed = !button.pressed
 	
-	# change the button color for feedback
+	# toggle state
+	button_states[row][column] = !button_states[row][column]
+	button.pressed = button_states[row][column]
+	
+	# visual feedback for toggling
 	if button.pressed:
-		button.modulate = Color(1, 0, 0)  # red when pressed
+		button.modulate = Color(1, 0, 0)  # active color
 	else:
-		button.modulate = Color(1, 1, 1)  # white when not pressed
+		button.modulate = Color(1, 1, 1)  # inactive color
+
 
 
 func _on_check_button_1_pressed() -> void:
@@ -270,3 +279,16 @@ func _on_check_button_63_pressed() -> void:
 
 func _on_check_button_64_pressed() -> void:
 	pass # Replace with function body.
+
+
+func _on_timer_timeout() -> void:
+	for row in range(8):
+		if button_states[row][current_column]:
+			play_sound_for_button(row, current_column)
+	
+	# move to next column, loop back to start if needed
+	current_column = (current_column + 1) % 8
+
+# function to trigger the sound
+func play_sound_for_button(row, column):
+	print("Playing sound for button at row:", row, "column:", column)
