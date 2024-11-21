@@ -1,45 +1,59 @@
 extends GridContainer
 
-var button_states: Array = []
+var timer : Timer
+var button_states : Array = []  
 
 func _ready():
-	# initialise button states (8x8 grid)
-	button_states = []
+	# set up timer
+	timer = $LoopTimer 
+	timer.wait_time = 1  # set interval for timer (1 second)
+	timer.connect("timeout", Callable(self, "_on_timer_timeout")) 
+	timer.start()  # start timer to begin loop
+
+	# initialize button states for each row and column
 	for row in range(8):
-		var column_states: Array = []
+		button_states.append([])
 		for column in range(8):
-			column_states.append(false)
-		button_states.append(column_states)
+			button_states[row].append(false)  
 
-	# connect buttons to signal
-	for i in range(get_child_count()):
-		var button = get_child(i)
-		
-		# ensure it's a Button node before connecting signal
-		if button is Button:
-			var row = int(i / 8)
-			var column = i % 8
-			
-			button.pressed.connect(Callable(self, "_on_button_pressed").bind(row, column))
+	# connect button signals
+	for row in range(8):
+		for column in range(8):
+			var button = get_child(row * 8 + column)
+			button.connect("pressed", Callable(self, "_on_button_pressed").bind(row, column))  # Corrected signal connection
 
+# signal handler for button press
 func _on_button_pressed(row: int, column: int):
-	var button = get_child(row * 8 + column)  # access correct button by row and column
+	print("Button pressed at Row: ", row, " Column: ", column)
+
+	# toggle button's state when pressed
 	button_states[row][column] = !button_states[row][column]
 
-	# change the button color based on its state
+	# play sound for button if active
 	if button_states[row][column]:
-		button.modulate = Color(0, 1, 0)  # green when active
 		play_sound_for_button(row)
-	else:
-		button.modulate = Color(1, 1, 1)  # white when inactive
+		highlight_active_row()  
 
-# play sound function
+func _on_timer_timeout():
+	# loop through each row and play sound if any button in row is active
+	for row in range(8):
+		for column in range(8):
+			if button_states[row][column]:  # if button is active
+				play_sound_for_button(row)
+	
+	highlight_active_row()  
+
+func highlight_active_row():
+	for row in range(8):
+		for column in range(8):
+			var button = get_child(row * 8 + column)
+			if button_states[row][column]:
+				button.modulate = Color(1, 0, 0)  # red color for active buttons
+			else:
+				button.modulate = Color(1, 1, 1)  # reset to default color for inactive buttons
+
 func play_sound_for_button(row: int):
+	# sound node is named "Row_X_Audio"
 	var audio_player = get_node("Row_" + str(row) + "_Audio")
-
-	# print if audio player is found or not
 	if audio_player:
-		print("Playing sound for row", row)
-		audio_player.play()
-	else:
-		print("Audio player not found for row", row)
+		audio_player.play()  # play sound for specific row
