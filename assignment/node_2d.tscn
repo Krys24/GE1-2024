@@ -1,6 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://4b7uhlsfmlo7"]
+[gd_scene load_steps=10 format=3 uid="uid://4b7uhlsfmlo7"]
 
 [ext_resource type="Script" path="res://grid_container.gd" id="1_htinr"]
+[ext_resource type="AudioStream" uid="uid://d3qhyh4payy6m" path="res://264446__kickhat__open-button-1.wav" id="2_ifcnh"]
+[ext_resource type="AudioStream" uid="uid://ds0eoohbcb4p3" path="res://348005__samuelcable__turn-light-on.wav" id="3_e4gra"]
+[ext_resource type="AudioStream" uid="uid://butkbt7xtrgwk" path="res://420504__jfrecords__uprising3.wav" id="4_c3oow"]
+[ext_resource type="AudioStream" uid="uid://bimnxtir7ul80" path="res://420505__jfrecords__uprising2.wav" id="5_ueoq0"]
+[ext_resource type="AudioStream" uid="uid://c51gvpo1ih7y6" path="res://420506__jfrecords__uprising1.wav" id="6_rk12c"]
+[ext_resource type="AudioStream" uid="uid://bn452a548xglh" path="res://613409__josheb_policarpio__button-8.wav" id="7_4mhfr"]
+[ext_resource type="AudioStream" uid="uid://i05bjol3glvr" path="res://615539__crash_358__sci-fi-ui-button-sound-016.wav" id="8_ghd0h"]
+[ext_resource type="AudioStream" uid="uid://di6noq7vwrh1q" path="res://751296__artninja__firing_weapons_button_sound_01.mp3" id="9_ymwoh"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -13,210 +21,359 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="GridContainer" type="GridContainer" parent="Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_right = 380.0
+offset_bottom = 220.0
 columns = 8
 script = ExtResource("1_htinr")
 
 [node name="CheckButton1" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton2" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton3" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton4" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton5" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton6" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton7" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton8" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton9" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton10" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton11" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton12" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton13" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton14" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton15" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton16" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton17" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton18" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton19" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton20" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton21" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton22" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton23" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton24" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton25" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton26" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton27" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton28" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton29" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton30" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton31" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton32" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton33" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton34" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton35" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton36" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton37" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton38" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton39" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton40" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton41" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton42" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton43" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton44" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton45" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton46" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton47" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton48" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton49" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton50" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton51" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton52" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton53" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton54" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton55" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton56" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton57" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton58" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton59" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton60" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton61" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton62" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton63" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="CheckButton64" type="CheckButton" parent="Control/GridContainer"]
+custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
+icon_alignment = 1
 
 [node name="Timer" type="Timer" parent="Control/GridContainer"]
 wait_time = 0.5
 autostart = true
+
+[node name="Row_0_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("2_ifcnh")
+
+[node name="Row_1_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("3_e4gra")
+
+[node name="Row_2_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("4_c3oow")
+
+[node name="Row_3_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("5_ueoq0")
+
+[node name="Row_4_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("6_rk12c")
+
+[node name="Row_5_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("7_4mhfr")
+
+[node name="Row_6_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("8_ghd0h")
+
+[node name="Row_7_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
+stream = ExtResource("9_ymwoh")
 
 [connection signal="pressed" from="Control/GridContainer/CheckButton1" to="Control/GridContainer" method="_on_check_button_1_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton2" to="Control/GridContainer" method="_on_check_button_2_pressed"]
