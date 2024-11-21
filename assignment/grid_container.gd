@@ -1,29 +1,45 @@
-extends GridContainer  # The script is attached to the GridContainer itself
+extends GridContainer
 
-# Called when the node enters the scene tree for the first time
+var button_states: Array = []
+
 func _ready():
-	# Loop over all buttons in the grid and connect them to the on_button_pressed function
-	for row in range(8):  # 8 rows
-		for column in range(8):  # 8 columns
-			var button_index = row * 8 + column
-			# Make sure GridContainer contains enough children (64 buttons)
-			if button_index < get_child_count():
-				var button = get_child(button_index)  # Access each button by its index
-				# Connect the "pressed" signal of the button to the function "_on_button_pressed"
-				button.connect("pressed", Callable(self, "_on_button_pressed").bind(row, column))
+	# initialise button states (8x8 grid)
+	button_states = []
+	for row in range(8):
+		var column_states: Array = []
+		for column in range(8):
+			column_states.append(false)
+		button_states.append(column_states)
 
-# Function to handle button press
-func _on_button_pressed(row, column):
-	print("Button pressed at row:", row, "column:", column)
-	play_sound_for_button(row)
+	# connect buttons to signal
+	for i in range(get_child_count()):
+		var button = get_child(i)
+		
+		# ensure it's a Button node before connecting signal
+		if button is Button:
+			var row = int(i / 8)
+			var column = i % 8
+			
+			button.pressed.connect(Callable(self, "_on_button_pressed").bind(row, column))
 
-# function to play sound for when a button pressed
-func play_sound_for_button(row):
-	var audio_player_name = "Row_%d_Audio" % row  # create name of AudioStreamPlayer node (e.g. Row_0_Audio)
-	var audio_player = get_node(audio_player_name) 
-	
-	if audio_player:
-		print("Playing sound for row:", row)
-		audio_player.play()  # play sound for current row
+func _on_button_pressed(row: int, column: int):
+	var button = get_child(row * 8 + column)  # access correct button by row and column
+	button_states[row][column] = !button_states[row][column]
+
+	# change the button color based on its state
+	if button_states[row][column]:
+		button.modulate = Color(0, 1, 0)  # green when active
+		play_sound_for_button(row)
 	else:
-		print("Error: Audio player not found for row", row)
+		button.modulate = Color(1, 1, 1)  # white when inactive
+
+# play sound function
+func play_sound_for_button(row: int):
+	var audio_player = get_node("Row_" + str(row) + "_Audio")
+
+	# print if audio player is found or not
+	if audio_player:
+		print("Playing sound for row", row)
+		audio_player.play()
+	else:
+		print("Audio player not found for row", row)
