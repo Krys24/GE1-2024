@@ -1,59 +1,65 @@
-extends GridContainer
+extends Node
 
-var timer : Timer
-var button_states : Array = []  
+# declare variables for tempo slider, volume sliders, audio players and buttons
+var global_tempo_slider : HSlider
+var row_volume_sliders : Array
+var row_audio_players : Array
+var buttons : Array
 
 func _ready():
-	# set up timer
-	timer = $LoopTimer 
-	timer.wait_time = 1  # set interval for timer (1 second)
-	timer.connect("timeout", Callable(self, "_on_timer_timeout")) 
-	timer.start()  # start timer to begin loop
+	# initialize arrays for row sliders, audio players, and buttons
+	row_volume_sliders = []
+	row_audio_players = []
+	buttons = []
 
-	# initialize button states for each row and column
-	for row in range(8):
-		button_states.append([])
-		for column in range(8):
-			button_states[row].append(false)  
+	# access tempo slider
+	global_tempo_slider = $GlobalTempoSlider
 
-	# connect button signals
-	for row in range(8):
-		for column in range(8):
-			var button = get_child(row * 8 + column)
-			button.connect("pressed", Callable(self, "_on_button_pressed").bind(row, column))  # Corrected signal connection
+	# initialize rows of volume sliders and audio players
+	for i in range(8):
+		# get volume sliders for each row
+		row_volume_sliders.append(get_node("Row_" + str(i) + "_Volume"))
+		# get audio players for each row
+		row_audio_players.append(get_node("Row_" + str(i) + "_Audio"))
 
-# signal handler for button press
-func _on_button_pressed(row: int, column: int):
-	print("Button pressed at Row: ", row, " Column: ", column)
+		# get buttons for each row (8 buttons per row)
+		var row_buttons = []
+		for j in range(8):
+			var button_index = i * 8 + (j + 1)  
+			var button_name = "CheckButton" + str(button_index)  
+			row_buttons.append(get_node(button_name))  # access button by name
+		buttons.append(row_buttons)
 
-	# toggle button's state when pressed
-	button_states[row][column] = !button_states[row][column]
+		# set initial volume and pitch for each row's audio player and volume slider
+		row_audio_players[i].volume_db = row_volume_sliders[i].value
+		row_audio_players[i].pitch_scale = global_tempo_slider.value / 100.0
 
-	# play sound for button if active
-	if button_states[row][column]:
-		play_sound_for_button(row)
-		highlight_active_row()  
+		# connect signals for each button in the row
+		for button in row_buttons:
+			button.connect("pressed", Callable(self, "_on_button_pressed").bind(i))  
+	# connect tempo slider to update pitch for all audio players
+	global_tempo_slider.connect("value_changed", Callable(self, "_on_tempo_changed"))
 
-func _on_timer_timeout():
-	# loop through each row and play sound if any button in row is active
-	for row in range(8):
-		for column in range(8):
-			if button_states[row][column]:  # if button is active
-				play_sound_for_button(row)
-	
-	highlight_active_row()  
+	# check if all audio players are loaded correctly
+	for i in range(8):
+		if row_audio_players[i].stream == null:
+			print("Error: No audio file assigned to Row_" + str(i) + "_Audio.")
+		else:
+			print("Audio file loaded for Row_" + str(i) + "_Audio.")
 
-func highlight_active_row():
-	for row in range(8):
-		for column in range(8):
-			var button = get_child(row * 8 + column)
-			if button_states[row][column]:
-				button.modulate = Color(1, 0, 0)  # red color for active buttons
-			else:
-				button.modulate = Color(1, 1, 1)  # reset to default color for inactive buttons
+# called when a button is pressed
+func _on_button_pressed(row_index : int) -> void:
+	# get audio player for the corresponding row
+	var audio_player = row_audio_players[row_index]
+	if audio_player.stream == null:
+		print("Error: No audio file assigned to Row_" + str(row_index) + "_Audio.")
+		return
+	# play audio for corresponding row's audio player
+	audio_player.play()
+	print("Playing audio for Row_" + str(row_index) + "_Audio...")
 
-func play_sound_for_button(row: int):
-	# sound node is named "Row_X_Audio"
-	var audio_player = get_node("Row_" + str(row) + "_Audio")
-	if audio_player:
-		audio_player.play()  # play sound for specific row
+# called when tempo slider value changes
+func _on_tempo_changed(value : float) -> void:
+	# update pitch for all audio players based on tempo slider
+	for i in range(8):
+		row_audio_players[i].pitch_scale = global_tempo_slider.value / 100.0
