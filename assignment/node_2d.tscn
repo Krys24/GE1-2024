@@ -347,8 +347,6 @@ custom_minimum_size = Vector2(130, 75)
 layout_mode = 2
 icon_alignment = 1
 
-[node name="LoopTimer" type="Timer" parent="Control/GridContainer"]
-
 [node name="Row_0_Audio" type="AudioStreamPlayer" parent="Control/GridContainer"]
 stream = ExtResource("2_ifcnh")
 
@@ -475,7 +473,6 @@ value = 120.0
 [connection signal="pressed" from="Control/GridContainer/CheckButton62" to="Control/GridContainer" method="_on_check_button_62_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton63" to="Control/GridContainer" method="_on_check_button_63_pressed"]
 [connection signal="pressed" from="Control/GridContainer/CheckButton64" to="Control/GridContainer" method="_on_check_button_64_pressed"]
-[connection signal="timeout" from="Control/GridContainer/LoopTimer" to="Control/GridContainer" method="_on_timer_timeout"]
 [connection signal="value_changed" from="Control/GridContainer/Row_0_Volume" to="Control/GridContainer" method="_on_row_0_volume_value_changed"]
 [connection signal="value_changed" from="Control/GridContainer/Row_1_Volume" to="Control/GridContainer" method="_on_row_1_volume_value_changed"]
 [connection signal="value_changed" from="Control/GridContainer/Row_2_Volume" to="Control/GridContainer" method="_on_row_2_volume_value_changed"]
