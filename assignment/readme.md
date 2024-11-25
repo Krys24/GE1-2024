@@ -10,6 +10,8 @@ Class Group: TU858/4
 
 Video:
 
+[![Holographic Musical Instrument Demo](https://img.youtube.com/vi/LlT9ZCJVVKU/0.jpg)](https://youtu.be/LlT9ZCJVVKU)
+
 # Description Of The Project
 
 This project implements a holographic musical instrument using Godot. This instrument is emulated as a 8x8 grid that contains buttons. Each row plays a different sound. You can increase/decrease the tempo of each sound and increase/decrease their volume.
