@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://bedtfetyt1t1n"]
+
+[ext_resource type="Script" path="res://node_3d.gd" id="1_mjq1o"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_vjx6a"]
+size = Vector2(5, 5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_jadvd"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_4rw1d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_b41nn"]
+
+[sub_resource type="Animation" id="Animation_udkcr"]
+resource_name = "MoveCylinder"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCylinder3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 2.11853), Vector3(0, 2, 2.119), Vector3(0, 0, 2.119)]
+}
+
+[sub_resource type="Animation" id="Animation_fj22l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGCylinder3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 2.11853)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j1ktp"]
+_data = {
+"MoveCylinder": SubResource("Animation_udkcr"),
+"RESET": SubResource("Animation_fj22l")
+}
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_mjq1o")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.988995, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("PlaneMesh_vjx6a")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 0, 0, 0)
+shape = SubResource("BoxShape3D_jadvd")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.821066, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.396476, 0)
+mesh = SubResource("SphereMesh_4rw1d")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_b41nn")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0411385, -1.21572)
+ignore_occlusion_culling = true
+size = Vector3(3, 2, 0.5)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2.11853)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CSGCylinder3D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_j1ktp")
+}
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 5, 10)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0)
+light_energy = 1.5
