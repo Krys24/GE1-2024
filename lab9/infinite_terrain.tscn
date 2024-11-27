@@ -1,6 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://b5bedohixll13"]
+[gd_scene load_steps=6 format=3 uid="uid://b5bedohixll13"]
 
 [ext_resource type="Script" path="res://player.gd" id="1_v6cis"]
+[ext_resource type="Script" path="res://terrain_manager.gd" id="2_qjqjd"]
+[ext_resource type="PackedScene" uid="uid://b5b0t136rsddp" path="res://terrrain_chunk.tscn" id="3_7kb0r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5a1wy"]
 
@@ -8,7 +10,18 @@
 
 [node name="InfiniteTerrain" type="Node3D"]
 
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.866025, 0.353553, 0.353553, -0.449401, 0.240437, 0.860366, 0.219178, -0.903986, 0.367112, 0, 7.08809, 0)
+top_level = true
+light_color = Color(1, 1, 0.780392, 1)
+light_energy = 4.0
+
+[node name="TerrainManager" type="Node3D" parent="."]
+script = ExtResource("2_qjqjd")
+chunk_scene = ExtResource("3_7kb0r")
+
 [node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34407, 0)
 script = ExtResource("1_v6cis")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
@@ -18,4 +31,4 @@ mesh = SubResource("BoxMesh_5a1wy")
 shape = SubResource("BoxShape3D_wt7kx")
 
 [node name="Camera3D" type="Camera3D" parent="Player"]
-transform = Transform3D(1, 0, 0, 0, -0.675912, 0.736983, 0, -0.736983, -0.675912, 0, 10, -15)
+transform = Transform3D(1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.0871558, 0, 100, -15)
